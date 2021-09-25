@@ -77,7 +77,7 @@ namespace WebAPI.Service.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
+        public async Task<ActionResult<Employee>> CreateEmployee([FromBody]Employee employee)
         {
             try
             {

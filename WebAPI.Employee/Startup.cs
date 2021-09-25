@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Server.Models;
+using WebAPI.Service.Models;
 
 namespace WebAPI.Service
 {
@@ -31,6 +32,7 @@ namespace WebAPI.Service
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddControllers();
             services.AddScoped<IEmpolyeeRepo, EmployeeRepo>();
+            services.AddScoped<IDepartmentRepo, DepartmentRepo>();
 
             services.AddSwaggerGen(c =>
             {
